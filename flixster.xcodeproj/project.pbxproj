@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		014E003F20E592550094B1C7 /* MoviesGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 014E003E20E592550094B1C7 /* MoviesGridViewController.m */; };
+		014E004220E5949D0094B1C7 /* MovieCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 014E004120E5949D0094B1C7 /* MovieCollectionCell.m */; };
 		01B1272520E55CF100AD5B26 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B1272420E55CF100AD5B26 /* DetailsViewController.m */; };
 		01DB64DD20E4098A00BBB0D7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DB64DC20E4098A00BBB0D7 /* AppDelegate.m */; };
 		01DB64E320E4098A00BBB0D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01DB64E120E4098A00BBB0D7 /* Main.storyboard */; };
@@ -19,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		014E003D20E592550094B1C7 /* MoviesGridViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoviesGridViewController.h; sourceTree = "<group>"; };
+		014E003E20E592550094B1C7 /* MoviesGridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesGridViewController.m; sourceTree = "<group>"; };
+		014E004020E5949D0094B1C7 /* MovieCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCollectionCell.h; sourceTree = "<group>"; };
+		014E004120E5949D0094B1C7 /* MovieCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCollectionCell.m; sourceTree = "<group>"; };
 		01B1272320E55CF100AD5B26 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		01B1272420E55CF100AD5B26 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		01DB64D820E4098A00BBB0D7 /* flixster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flixster.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +98,8 @@
 				01DB64F220E4140900BBB0D7 /* MoviesViewController.m */,
 				01B1272320E55CF100AD5B26 /* DetailsViewController.h */,
 				01B1272420E55CF100AD5B26 /* DetailsViewController.m */,
+				014E003D20E592550094B1C7 /* MoviesGridViewController.h */,
+				014E003E20E592550094B1C7 /* MoviesGridViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -101,6 +109,8 @@
 			children = (
 				01FD632220E4690F00429449 /* MovieCell.h */,
 				01FD632320E4690F00429449 /* MovieCell.m */,
+				014E004020E5949D0094B1C7 /* MovieCollectionCell.h */,
+				014E004120E5949D0094B1C7 /* MovieCollectionCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -224,8 +234,10 @@
 				01DB64EB20E4098A00BBB0D7 /* main.m in Sources */,
 				01B1272520E55CF100AD5B26 /* DetailsViewController.m in Sources */,
 				01DB64DD20E4098A00BBB0D7 /* AppDelegate.m in Sources */,
+				014E004220E5949D0094B1C7 /* MovieCollectionCell.m in Sources */,
 				01FD632420E4690F00429449 /* MovieCell.m in Sources */,
 				01DB64F320E4140900BBB0D7 /* MoviesViewController.m in Sources */,
+				014E003F20E592550094B1C7 /* MoviesGridViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
