@@ -203,6 +203,7 @@
                     <connections>
                         <outlet property="backdropView" destination="mwG-oP-sEH" id="5g5-Z2-d43"/>
                         <outlet property="posterView" destination="uLp-mb-Peu" id="bHH-hD-Y9f"/>
+                        <outlet property="scrollView" destination="nuz-NV-ttn" id="agX-xX-e5O"/>
                         <outlet property="synopsisLabel" destination="Bwf-5S-dVu" id="UGe-WG-sqq"/>
                         <outlet property="titleLabel" destination="viJ-Xh-OGU" id="EeV-SA-eP5"/>
                     </connections>
