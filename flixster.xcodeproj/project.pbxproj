@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01B1272520E55CF100AD5B26 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B1272420E55CF100AD5B26 /* DetailsViewController.m */; };
 		01DB64DD20E4098A00BBB0D7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DB64DC20E4098A00BBB0D7 /* AppDelegate.m */; };
 		01DB64E320E4098A00BBB0D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01DB64E120E4098A00BBB0D7 /* Main.storyboard */; };
 		01DB64E520E4098A00BBB0D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01DB64E420E4098A00BBB0D7 /* Assets.xcassets */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01B1272320E55CF100AD5B26 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		01B1272420E55CF100AD5B26 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		01DB64D820E4098A00BBB0D7 /* flixster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flixster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01DB64DB20E4098A00BBB0D7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		01DB64DC20E4098A00BBB0D7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -87,6 +90,8 @@
 			children = (
 				01DB64F120E4140900BBB0D7 /* MoviesViewController.h */,
 				01DB64F220E4140900BBB0D7 /* MoviesViewController.m */,
+				01B1272320E55CF100AD5B26 /* DetailsViewController.h */,
+				01B1272420E55CF100AD5B26 /* DetailsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01DB64EB20E4098A00BBB0D7 /* main.m in Sources */,
+				01B1272520E55CF100AD5B26 /* DetailsViewController.m in Sources */,
 				01DB64DD20E4098A00BBB0D7 /* AppDelegate.m in Sources */,
 				01FD632420E4690F00429449 /* MovieCell.m in Sources */,
 				01DB64F320E4140900BBB0D7 /* MoviesViewController.m in Sources */,
