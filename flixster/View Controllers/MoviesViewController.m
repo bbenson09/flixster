@@ -10,12 +10,14 @@
 #import "MovieCell.h"
 #import "DetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "MBProgressHUD.h"
 
 @interface MoviesViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *movies;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+
 
 @end
 
@@ -28,7 +30,11 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
-    [self fetchMovies];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        [self fetchMovies];
+    });
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
@@ -75,6 +81,8 @@
             // TODO: Reload your table view data
         }
         [self.refreshControl endRefreshing];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
     }];
     [task resume];
     
