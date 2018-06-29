@@ -152,6 +152,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="posterView" destination="wea-ub-hcA" id="ley-iE-fj4"/>
+                                            <segue destination="zit-AO-jV5" kind="show" id="tGH-7t-71J"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -241,4 +242,7 @@
             <point key="canvasLocation" x="136.80000000000001" y="-597.75112443778119"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="tGH-7t-71J"/>
+    </inferredMetricsTieBreakers>
 </document>
