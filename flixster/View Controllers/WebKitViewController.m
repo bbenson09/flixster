@@ -24,9 +24,6 @@
     
     [self fetchVideos];
     
-    
-    
-  
 }
 
 - (void) fetchVideos {
