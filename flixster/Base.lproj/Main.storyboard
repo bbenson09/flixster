@@ -186,9 +186,13 @@
                                         <rect key="frame" x="0.0" y="-64" width="375" height="237"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uLp-mb-Peu">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uLp-mb-Peu">
                                         <rect key="frame" x="8" y="114" width="117" height="164"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="6Jd-aI-A4u" appends="YES" id="HqL-n0-Mrf"/>
+                                        </connections>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="viJ-Xh-OGU">
                                         <rect key="frame" x="133" y="181" width="215" height="35"/>
@@ -219,8 +223,48 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X9V-Hg-Lwu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="6Jd-aI-A4u">
+                    <connections>
+                        <action selector="onTap:" destination="zit-AO-jV5" id="yQy-V0-SFW"/>
+                        <segue destination="80x-Ik-GTN" kind="presentation" id="SAf-Qq-BzY"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="137" y="978"/>
+        </scene>
+        <!--Web Kit View Controller-->
+        <scene sceneID="tsx-Ho-TWB">
+            <objects>
+                <viewController id="80x-Ik-GTN" customClass="WebKitViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oNS-aA-OGd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wpk-hE-ekA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <viewLayoutGuide key="safeArea" id="WHX-7x-e3P"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="WbT-yw-PM4" appends="YES" id="YBe-u4-mSP"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="Wpk-hE-ekA" id="G5Y-bb-2kI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RoO-cl-n7M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="WbT-yw-PM4"/>
+            </objects>
+            <point key="canvasLocation" x="1300" y="985.45727136431788"/>
         </scene>
         <!--Now Playing-->
         <scene sceneID="n0H-ou-IUg">

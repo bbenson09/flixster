@@ -8,6 +8,7 @@
 
 #import "DetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "WebKitViewController.h"
 
 @interface DetailsViewController ()
 
@@ -57,14 +58,26 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+- (IBAction)onTap:(id)sender {
+    
+    [self performSegueWithIdentifier:@"trailerSegue" sender:nil];
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    WebKitViewController *webKitViewController = [segue destinationViewController];
+    // [webKitViewController view];
+    
+    NSString *id = self.movie[@"id"];
+    NSLog(@"HERE'S THE ID%@", id);
+    
+    webKitViewController.id = id;
+    
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
 
 @end
