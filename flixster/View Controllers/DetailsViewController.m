@@ -26,21 +26,31 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    // Removed for encapsulation
+    /*
     NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
     NSString *posterURLString = self.movie[@"poster_path"];
     NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
     
     NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
-    [self.posterView setImageWithURL:posterURL];
+     */
+    [self.posterView setImageWithURL:self.movie.posterUrl];
     
-    
+    // Removed for encapsulation
+    /*
     NSString *backdropURLString = self.movie[@"backdrop_path"];
     NSString *fullBackdropURLString = [baseURLString stringByAppendingString:backdropURLString];
     NSURL *backdropURL = [NSURL URLWithString:fullBackdropURLString];
-    [self.backdropView setImageWithURL:backdropURL];
+     */
+    [self.backdropView setImageWithURL:self.movie.backdropUrl];
     
+    /*
     self.titleLabel.text = self.movie[@"title"];
     self.synopsisLabel.text = self.movie[@"overview"];
+     */
+    
+    self.titleLabel.text = self.movie.title;
+    self.synopsisLabel.text = self.movie.overview;
     
     [self.titleLabel sizeToFit];
     [self.synopsisLabel sizeToFit];
@@ -48,9 +58,7 @@
     CGFloat maxHeight = self.synopsisLabel.frame.origin.y + self.synopsisLabel.frame.size.height + 40.0;
     
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, maxHeight);
-    
-    
-    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,10 +79,10 @@
     WebKitViewController *webKitViewController = [segue destinationViewController];
     // [webKitViewController view];
     
-    NSString *id = self.movie[@"id"];
-    NSLog(@"HERE'S THE ID%@", id);
     
-    webKitViewController.id = id;
+    // NSString *id = self.movie[@"id"];
+    
+    webKitViewController.id = self.movie.id;
     
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.

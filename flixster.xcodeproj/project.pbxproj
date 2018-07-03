@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0120E24920E6DFB300CBBD8B /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0120E24820E6DFB300CBBD8B /* WebKit.framework */; };
 		0120E24C20E6E19300CBBD8B /* WebKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0120E24B20E6E19300CBBD8B /* WebKitViewController.m */; };
+		01304AE920EB2E0C007F3FE6 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 01304AE820EB2E0C007F3FE6 /* Movie.m */; };
 		014E003F20E592550094B1C7 /* MoviesGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 014E003E20E592550094B1C7 /* MoviesGridViewController.m */; };
 		014E004220E5949D0094B1C7 /* MovieCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 014E004120E5949D0094B1C7 /* MovieCollectionCell.m */; };
 		01B1272520E55CF100AD5B26 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B1272420E55CF100AD5B26 /* DetailsViewController.m */; };
@@ -26,6 +27,8 @@
 		0120E24820E6DFB300CBBD8B /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		0120E24A20E6E19300CBBD8B /* WebKitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebKitViewController.h; sourceTree = "<group>"; };
 		0120E24B20E6E19300CBBD8B /* WebKitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebKitViewController.m; sourceTree = "<group>"; };
+		01304AE720EB2E0C007F3FE6 /* Movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = SOURCE_ROOT; };
+		01304AE820EB2E0C007F3FE6 /* Movie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = SOURCE_ROOT; };
 		014E003D20E592550094B1C7 /* MoviesGridViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoviesGridViewController.h; sourceTree = "<group>"; };
 		014E003E20E592550094B1C7 /* MoviesGridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesGridViewController.m; sourceTree = "<group>"; };
 		014E004020E5949D0094B1C7 /* MovieCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCollectionCell.h; sourceTree = "<group>"; };
@@ -126,6 +129,8 @@
 		01DB64F620E414E800BBB0D7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				01304AE720EB2E0C007F3FE6 /* Movie.h */,
+				01304AE820EB2E0C007F3FE6 /* Movie.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 				014E004220E5949D0094B1C7 /* MovieCollectionCell.m in Sources */,
 				01FD632420E4690F00429449 /* MovieCell.m in Sources */,
 				01DB64F320E4140900BBB0D7 /* MoviesViewController.m in Sources */,
+				01304AE920EB2E0C007F3FE6 /* Movie.m in Sources */,
 				0120E24C20E6E19300CBBD8B /* WebKitViewController.m in Sources */,
 				014E003F20E592550094B1C7 /* MoviesGridViewController.m in Sources */,
 			);

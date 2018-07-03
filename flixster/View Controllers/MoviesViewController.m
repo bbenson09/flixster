@@ -11,14 +11,15 @@
 #import "DetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
 #import "MBProgressHUD.h"
+#import "Movie.h"
 
 @interface MoviesViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSArray *movies;
+@property (nonatomic, strong) NSMutableArray *movies;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (nonatomic, strong) NSArray *filteredData;
+@property (nonatomic, strong) NSMutableArray *filteredData;
 
 @end
 
@@ -73,13 +74,16 @@
         else {
             NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
             
-            NSLog(@"%@", dataDictionary);
-            
+            /*
             self.movies = dataDictionary[@"results"];
             
             for (NSDictionary *movie in self.movies) {
                 NSLog(@"%@", movie[@"title"]);
             }
+             */
+            
+            NSArray *dictionaries = dataDictionary[@"results"];
+            self.movies = [Movie moviesWithDictionary:dictionaries];
             
             // self.filteredData = self.movies;
             self.filteredData = self.movies;
@@ -111,7 +115,10 @@
     
     MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell" forIndexPath:indexPath];
     
-    NSDictionary *movie = self.filteredData[indexPath.row];
+    cell.movie = self.movies[indexPath.row];
+    
+    // Removed for encapsulation
+    /*
     cell.titleLabel.text = movie[@"title"];
     cell.synopsis.text = movie[@"overview"];
     
@@ -120,13 +127,13 @@
     NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
     
     NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
-    cell.posterView.image = nil;
-    [cell.posterView setImageWithURL:posterURL];
+     */
+    
+    // [cell.posterView setImageWithURL:posterURL];
     
     // cell.textLabel.text = movie[@"title"];
     
     return cell;
-    
     
 }
 
@@ -139,10 +146,9 @@
             // we don't have the indexPath variable here...
             return [evaluatedObject[@"title"] containsString:searchText];
         }];
-        self.filteredData = [self.movies filteredArrayUsingPredicate:predicate];
         
-        // NSLog(@"Data after this");
-        NSLog(@"%@", self.filteredData);
+        NSArray *filteredDataArray = [self.movies filteredArrayUsingPredicate:predicate];
+        self.filteredData = [NSMutableArray arrayWithArray:filteredDataArray];
     }
     else {
         self.filteredData = self.movies;
@@ -159,7 +165,7 @@
     
     UITableViewCell *tappedCell = sender;
     NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
-    NSDictionary *movie = self.filteredData[indexPath.row];
+    Movie *movie = self.filteredData[indexPath.row];
     
     DetailsViewController *detailsViewController = [segue destinationViewController];
     detailsViewController.movie = movie;

@@ -13,10 +13,8 @@
 
 @interface MoviesGridViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
-@property (nonatomic, strong) NSArray *movies;
+@property (nonatomic, strong) NSMutableArray *movies;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-
-
 
 @end
 
@@ -68,7 +66,8 @@
         else {
             NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
 
-            self.movies = dataDictionary[@"results"];
+            NSDictionary *dictionaries = dataDictionary[@"results"];
+            self.movies = [Movie moviesWithDictionary:dictionaries];
             [self.collectionView reloadData];
 
             // TODO: Get the array of movies
@@ -92,7 +91,7 @@
     
     UICollectionViewCell *tappedCell = sender;
     NSIndexPath *indexPath = [self.collectionView indexPathForCell:tappedCell];
-    NSDictionary *movie = self.movies[indexPath.item];
+    Movie *movie = self.movies[indexPath.item];
     
     DetailsViewController *detailsViewController = [segue destinationViewController];
     detailsViewController.movie = movie;
@@ -102,19 +101,10 @@
     
     MovieCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MovieCollectionCell" forIndexPath:indexPath];
     
-    NSDictionary *movie = self.movies[indexPath.item];
-    
-    NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
-    NSString *posterURLString = movie[@"poster_path"];
-    NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
-    
-    NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
-    cell.posterView.image = nil;
-    [cell.posterView setImageWithURL:posterURL];
+    Movie *movie = self.movies[indexPath.item];
+    cell.movie = movie;
     
     return cell;
-    
-    
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {

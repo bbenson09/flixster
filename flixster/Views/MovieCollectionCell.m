@@ -7,7 +7,18 @@
 //
 
 #import "MovieCollectionCell.h"
+#import "UIImageView+AFNetworking.h"
 
 @implementation MovieCollectionCell
+
+- (void)setMovie:(Movie *)movie {
+    
+    _movie = movie;
+    
+    self.posterView.image = nil;
+    if (self.movie.posterUrl != nil) {
+        [self.posterView setImageWithURL:self.movie.posterUrl];
+    }
+}
 
 @end
